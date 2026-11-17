@@ -5,6 +5,7 @@ import streamlit as st
 
 from app_pages.ui_common import STATUS_LABEL, badge, signal_chips
 from core.reporting import report_to_claims_csv, report_to_markdown
+from core.status import NOT_VERIFIED, normalize_status
 
 
 def _evidence_block(e: dict, contra: bool = False):
@@ -17,15 +18,22 @@ def _evidence_block(e: dict, contra: bool = False):
 
 
 def render_report(data: dict, rehydrate):
+    normalize_status(data)   # never show VERIFIED when zero claims were verified (core/status.py)
     decision = data["decision"]
-    st.markdown(badge(decision, decision) + "  " +
+    not_verified = data["decision_category"] == NOT_VERIFIED
+    head = badge("NOT VERIFIED", NOT_VERIFIED) if not_verified else badge(decision, decision)
+    st.markdown(head + "  " +
                 f'<span style="color:#5a6b7b">· {data["decision_category"]} · '
                 f'{data.get("retries",0)} retr{"y" if data.get("retries",0)==1 else "ies"} · '
                 f'{data.get("total_ms",0):.0f} ms · model {data.get("model","")}</span>',
                 unsafe_allow_html=True)
     st.write("")
 
-    if decision == "RELEASED" and data.get("final_answer"):
+    if not_verified:
+        st.markdown("##### No verified answer — insufficient evidence")
+        st.markdown(f'<div class="tg-withheld">{data.get("explanation","")}'
+                    f'<br><br><i>Model response: {data.get("final_answer","")}</i></div>', unsafe_allow_html=True)
+    elif decision == "RELEASED" and data.get("final_answer"):
         st.markdown("##### Verified answer")
         st.markdown(f'<div class="tg-answer">{data["final_answer"]}</div>', unsafe_allow_html=True)
         if data.get("citations"):

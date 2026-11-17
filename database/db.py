@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Iterator
 
 from core.models import Chunk, TrustReport
+from core.status import VERIFIED, normalize_status
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS documents (
@@ -189,6 +190,7 @@ class Database:
         if not log_queries:
             payload["question"] = f"[not logged; sha256={qhash[:16]}]"
         report_json = json.dumps(payload, ensure_ascii=False)
+        category = payload["decision_category"]   # user-facing label (core/status.py), consistent with report_json
         with self._lock, self.connect() as con:
             row = con.execute("SELECT seq, integrity_hash FROM requests ORDER BY seq DESC LIMIT 1").fetchone()
             seq = (row["seq"] + 1) if row and row["seq"] is not None else 1
@@ -196,23 +198,25 @@ class Database:
             # tamper-evident chain: each record's hash covers the previous hash + this record's key fields
             integrity_hash = hashlib.sha256(
                 f"{prev_hash}|{seq}|{report.request_id}|{report.created_at}|{report.decision.value}|"
-                f"{report.decision_category}|{qhash}|{report_json}".encode("utf-8")).hexdigest()
+                f"{category}|{qhash}|{report_json}".encode("utf-8")).hexdigest()
             con.execute(
                 "INSERT OR REPLACE INTO requests (request_id, created_at, mode, question, question_hash, model,"
                 " decision, category, retries, total_ms, report_json, seq, prev_hash, integrity_hash)"
                 " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (report.request_id, report.created_at, report.mode, payload["question"], qhash, report.model,
-                 report.decision.value, report.decision_category, report.retries, report.total_ms,
+                 report.decision.value, category, report.retries, report.total_ms,
                  report_json, seq, prev_hash, integrity_hash))
 
     def get_report(self, request_id: str) -> dict | None:
         with self.connect() as con:
             row = con.execute("SELECT report_json FROM requests WHERE request_id = ?", (request_id,)).fetchone()
-        return json.loads(row["report_json"]) if row else None
+        # normalise on read too, so records stored before the NOT_VERIFIED fix are shown correctly
+        # (the stored row is untouched, keeping the audit hash chain intact)
+        return normalize_status(json.loads(row["report_json"])) if row else None
 
     def search_requests(self, text: str = "", decision: str = "", limit: int = 200) -> list[dict]:
-        q = ("SELECT request_id, created_at, mode, question, model, decision, category, retries, total_ms"
-             " FROM requests WHERE 1=1")
+        q = ("SELECT request_id, created_at, mode, question, model, decision, category, retries, total_ms,"
+             " report_json FROM requests WHERE 1=1")
         args: list = []
         if text:
             q += " AND (request_id LIKE ? OR question LIKE ?)"
@@ -223,7 +227,12 @@ class Database:
         q += " ORDER BY created_at DESC LIMIT ?"
         args.append(limit)
         with self.connect() as con:
-            return [dict(r) for r in con.execute(q, args).fetchall()]
+            rows = [dict(r) for r in con.execute(q, args).fetchall()]
+        for r in rows:
+            report_json = r.pop("report_json", None)
+            if r["category"] == VERIFIED and report_json:
+                r["category"] = normalize_status(json.loads(report_json))["decision_category"]
+        return rows
 
     def purge_requests(self, older_than_iso: str) -> int:
         with self._lock, self.connect() as con:

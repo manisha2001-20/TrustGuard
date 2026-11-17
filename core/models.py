@@ -245,7 +245,10 @@ class TrustReport:
         return self.attempts[-1] if self.attempts else None
 
     def to_dict(self, include_drafts: bool = True) -> dict[str, Any]:
-        return {
+        # Every outward view (API, stored audit record, UI) is built from this dict, so the
+        # "never VERIFIED with zero verified claims" rule is applied here. See core/status.py.
+        from core.status import normalize_status
+        return normalize_status({
             "request_id": self.request_id,
             "question": self.question,
             "created_at": self.created_at,
@@ -266,4 +269,4 @@ class TrustReport:
             "errors": self.errors,
             "settings_snapshot": self.settings_snapshot,
             "total_ms": round(self.total_ms, 1),
-        }
+        })

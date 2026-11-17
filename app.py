@@ -121,7 +121,12 @@ def page_query():
             if data["retries"]:
                 st.write(f"↻ Repaired and re-verified · {data['retries']} retry(ies)")
         is_error = data["decision_category"] == "SYSTEM_ERROR"
-        verdict = "RELEASED" if data["decision"] == "RELEASED" else f"WITHHELD · {data['decision_category']}"
+        if data["decision_category"] == "NOT_VERIFIED":
+            verdict = "NOT VERIFIED · insufficient evidence"
+        elif data["decision"] == "RELEASED":
+            verdict = "RELEASED"
+        else:
+            verdict = f"WITHHELD · {data['decision_category']}"
         stages.update(label=f"{verdict} · {elapsed:.1f}s · {data['model']}",
                       state="error" if is_error else "complete", expanded=False)
 
