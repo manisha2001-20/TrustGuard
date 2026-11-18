@@ -15,6 +15,44 @@ questions are withheld as insufficient evidence.
 
 ---
 
+## Project summary
+
+**Problem.** LLMs answer legal questions fluently, but they can invent section numbers, punishments or fines,
+or cite provisions that have been repealed. In a legal setting an unverified answer can be worse than no answer.
+
+**Objectives**
+1. Verify every factual claim in an LLM's draft against authoritative statute text, independently of the model that wrote it.
+2. Catch fabricated sections, numbers, punishments and outdated provisions with deterministic checks.
+3. Screen questions and answers for malicious content.
+4. Fail closed: release an answer only when every mandatory check passes; otherwise withhold it with an explainable report.
+5. Measure the effect against a base LLM and a retrieval-augmented LLM on a labelled benchmark with a held-out split.
+
+**Key features:** hybrid retrieval (BM25 + FAISS dense search + cross-encoder rerank) · atomic claim extraction ·
+NLI-based claim verification · numeric, punishment and legal-currency checks · layered safety screener ·
+bounded evidence-grounded repair · strict release policy · Streamlit app (5 pages) · FastAPI REST API ·
+SQLite audit store · reproducible evaluation with bootstrap confidence intervals.
+
+**Technology stack**
+
+| Layer | Tools |
+|---|---|
+| Language | Python 3.11 |
+| LLM access | Ollama (e.g. `qwen2.5:3b`) or any OpenAI-compatible endpoint |
+| Retrieval | `rank-bm25`, `faiss-cpu`, `sentence-transformers` (`all-MiniLM-L6-v2`, `ms-marco-MiniLM-L-6-v2` reranker) |
+| Verification | Hugging Face `transformers` NLI cross-encoder (`nli-deberta-v3-xsmall`) + rule-based legal checks |
+| Documents | PyMuPDF (statute PDF ingestion) |
+| Storage | SQLite |
+| Interfaces | Streamlit (UI), FastAPI + Uvicorn (REST API) |
+| Testing | pytest (unit + integration) |
+
+**Request workflow**
+1. The question is screened for malicious content.
+2. Relevant statute passages are retrieved (BM25 + dense search, then reranked).
+3. The LLM drafts an answer from that evidence.
+4. The draft is split into atomic claims, and each claim is verified (NLI + numeric + statutory + legal-currency checks).
+5. If a mandatory check fails, a bounded repair loop asks for an evidence-grounded revision.
+6. The release policy releases the answer only if every check passes; otherwise it is withheld with a report explaining why.
+
 ## Why this is not "an LLM with a few keyword checks"
 
 - **Verification is independent of the generating model.** Claims are checked with a separate NLI cross-encoder, deterministic statute/number/punishment logic, a legal-currency registry, and retrieval relevance — never by asking the same LLM "are you sure?".
@@ -203,6 +241,15 @@ docker build -t trustguard-api .
 docker run --rm -p 8000:8000 -v ${PWD}/data:/app/data trustguard-api
 ```
 The container runs the API only; Ollama/models run on the host (set `TRUSTGUARD_LLM_BASE_URL` to reach it).
+
+## Limitations
+
+- The corpus is small and fixed (6 statutes). Questions outside it are withheld, not answered.
+- Benchmark labels are single-reviewer and model-authored, with no independent human verification yet.
+- The evaluation sets are small (20–36 items each), so confidence intervals are wide; the perfect scores on the
+  frozen set are not expected to hold on a larger, independently labelled set.
+- Headline figures use the scripted backend; results with a live model depend on that model.
+- Research prototype: it supports legal information verification and is not legal advice.
 
 ## License & data provenance
 
