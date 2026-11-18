@@ -1,0 +1,6 @@
+# Thresholds calibrated on evaluation/datasets/dev.jsonl ONLY (see evaluation/calibrate.py).
+# Loaded automatically over config/default.yaml. Do not hand-edit; re-run calibration instead.
+verification:
+  entail_threshold: 0.5
+retrieval:
+  min_relevance: 0.3

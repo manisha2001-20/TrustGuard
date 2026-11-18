@@ -1,0 +1,1091 @@
+{
+  "split": "final_test_v1",
+  "n_items": 33,
+  "ks": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "generated_at": "2026-10-26 23:53:43",
+  "elapsed_s": 50.6,
+  "configs": [
+    {
+      "config": "bm25",
+      "scored_items": 23,
+      "skipped_no_kb_gold": 10,
+      "mrr": {
+        "estimate": 0.913,
+        "lo": 0.7826,
+        "hi": 1.0,
+        "n": 23
+      },
+      "recall@1": {
+        "estimate": 0.913,
+        "lo": 0.7826,
+        "hi": 1.0,
+        "n": 23
+      },
+      "recall@3": {
+        "estimate": 0.913,
+        "lo": 0.7826,
+        "hi": 1.0,
+        "n": 23
+      },
+      "recall@5": {
+        "estimate": 0.913,
+        "lo": 0.7826,
+        "hi": 1.0,
+        "n": 23
+      },
+      "recall@10": {
+        "estimate": 0.913,
+        "lo": 0.7826,
+        "hi": 1.0,
+        "n": 23
+      },
+      "per_item": [
+        {
+          "id": "F01",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:46"
+          ]
+        },
+        {
+          "id": "F02",
+          "golds": [
+            "BNS:319"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:319",
+            "BNS:318",
+            "BNS:318",
+            "BNS:318",
+            "BNS:318"
+          ]
+        },
+        {
+          "id": "F03",
+          "golds": [
+            "BNS:351"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:351",
+            "BNS:351",
+            "BNS:61",
+            "BNS:131",
+            "BNS:189"
+          ]
+        },
+        {
+          "id": "F04",
+          "golds": [
+            "BNS:304"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:304",
+            "BNS:46",
+            "BNS:266",
+            "BNS:170",
+            "BNS:22"
+          ]
+        },
+        {
+          "id": "F05",
+          "golds": [
+            "COI:15"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "COI:15",
+            "COI:15",
+            "COI:15",
+            "COI:323B",
+            "COI:395"
+          ]
+        },
+        {
+          "id": "F06",
+          "golds": [
+            "COI:25"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "COI:25",
+            "",
+            "COI:51A",
+            "COI:301",
+            "COI:355"
+          ]
+        },
+        {
+          "id": "F07",
+          "golds": [
+            "COI:23"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "COI:23",
+            "",
+            "COI:395",
+            "COI:395",
+            "COI:323B"
+          ]
+        },
+        {
+          "id": "F08",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:70",
+            "ITA:29",
+            "ITA:66F",
+            "ITA:42",
+            "ITA:87"
+          ]
+        },
+        {
+          "id": "F12",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:11"
+          ]
+        },
+        {
+          "id": "F13",
+          "golds": [
+            "BNS:351"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:351",
+            "BNS:351",
+            "BNS:129",
+            "BNS:350",
+            "BNS:65"
+          ]
+        },
+        {
+          "id": "F14",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:70",
+            "ITA:87",
+            "ITA:87",
+            "ITA:65",
+            "ITA:29"
+          ]
+        },
+        {
+          "id": "F15",
+          "golds": [
+            "BNS:319"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:319",
+            "BNS:318",
+            "BNS:268",
+            "BNS:172",
+            "BNS:111"
+          ]
+        },
+        {
+          "id": "F16",
+          "golds": [
+            "BNS:115"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:115",
+            "BNS:117",
+            "BNS:122",
+            "BNS:117",
+            "BNS:117"
+          ]
+        },
+        {
+          "id": "F17",
+          "golds": [
+            "COI:25"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "COI:25",
+            "COI:27",
+            "",
+            "COI:302",
+            "COI:304"
+          ]
+        },
+        {
+          "id": "F18",
+          "golds": [
+            "BNS:296"
+          ],
+          "first_hit_rank": null,
+          "top5": [
+            "BNS:30",
+            "BNS:30",
+            "BNS:26",
+            "BNS:25",
+            "BNS:15"
+          ]
+        },
+        {
+          "id": "F20",
+          "golds": [
+            "ITA:66A"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:66A",
+            "ITA:66A",
+            "",
+            "ITA:3",
+            ""
+          ]
+        },
+        {
+          "id": "F21",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:309"
+          ]
+        },
+        {
+          "id": "F22",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:70",
+            "ITA:70A",
+            "ITA:66F",
+            "ITA:87",
+            "ITA:18"
+          ]
+        },
+        {
+          "id": "F23",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:70",
+            "ITA:66F",
+            "ITA:87",
+            "ITA:66A",
+            "ITA:87"
+          ]
+        },
+        {
+          "id": "F28",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:70",
+            "ITA:29",
+            "ITA:43",
+            "ITA:42",
+            "ITA:87"
+          ]
+        },
+        {
+          "id": "F29",
+          "golds": [
+            "BNS:319"
+          ],
+          "first_hit_rank": null,
+          "top5": [
+            "BNS:351",
+            "BNS:351",
+            "BNS:329",
+            "",
+            "BNS:61"
+          ]
+        },
+        {
+          "id": "F30",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:307"
+          ]
+        },
+        {
+          "id": "F33",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:214"
+          ]
+        }
+      ]
+    },
+    {
+      "config": "hybrid",
+      "scored_items": 23,
+      "skipped_no_kb_gold": 10,
+      "mrr": {
+        "estimate": 0.9239,
+        "lo": 0.8043,
+        "hi": 1.0,
+        "n": 23
+      },
+      "recall@1": {
+        "estimate": 0.913,
+        "lo": 0.7826,
+        "hi": 1.0,
+        "n": 23
+      },
+      "recall@3": {
+        "estimate": 0.913,
+        "lo": 0.7826,
+        "hi": 1.0,
+        "n": 23
+      },
+      "recall@5": {
+        "estimate": 0.9565,
+        "lo": 0.8696,
+        "hi": 1.0,
+        "n": 23
+      },
+      "recall@10": {
+        "estimate": 0.9565,
+        "lo": 0.8696,
+        "hi": 1.0,
+        "n": 23
+      },
+      "per_item": [
+        {
+          "id": "F01",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:309",
+            "BNS:308"
+          ]
+        },
+        {
+          "id": "F02",
+          "golds": [
+            "BNS:319"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:319",
+            "BNS:318",
+            "BNS:318",
+            "BNS:242",
+            "BNS:174"
+          ]
+        },
+        {
+          "id": "F03",
+          "golds": [
+            "BNS:351"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:351",
+            "BNS:351",
+            "BNS:313",
+            "BNS:134",
+            "BNS:133"
+          ]
+        },
+        {
+          "id": "F04",
+          "golds": [
+            "BNS:304"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:304",
+            "BNS:313",
+            "BNS:250",
+            "BNS:266",
+            "BNS:46"
+          ]
+        },
+        {
+          "id": "F05",
+          "golds": [
+            "COI:15"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "COI:15",
+            "COI:15",
+            "COI:15",
+            "COI:323B",
+            "COI:323B"
+          ]
+        },
+        {
+          "id": "F06",
+          "golds": [
+            "COI:25"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "COI:25",
+            "",
+            "COI:19",
+            "COI:19",
+            "COI:355"
+          ]
+        },
+        {
+          "id": "F07",
+          "golds": [
+            "COI:23"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "COI:23",
+            "COI:39",
+            "COI:395",
+            "COI:43A",
+            "COI:15"
+          ]
+        },
+        {
+          "id": "F08",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:70",
+            "ITA:66F",
+            "ITA:72",
+            "ITA:66A",
+            "ITA:66E"
+          ]
+        },
+        {
+          "id": "F12",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:62"
+          ]
+        },
+        {
+          "id": "F13",
+          "golds": [
+            "BNS:351"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:351",
+            "BNS:351",
+            "BNS:148",
+            "BNS:195",
+            "BNS:134"
+          ]
+        },
+        {
+          "id": "F14",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:70",
+            "ITA:87",
+            "ITA:29",
+            "ITA:66B",
+            "ITA:69B"
+          ]
+        },
+        {
+          "id": "F15",
+          "golds": [
+            "BNS:319"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:319",
+            "BNS:211",
+            "BNS:222",
+            "BNS:318",
+            "BNS:210"
+          ]
+        },
+        {
+          "id": "F16",
+          "golds": [
+            "BNS:115"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:115",
+            "BNS:122",
+            "BNS:118",
+            "BNS:8",
+            "BNS:125"
+          ]
+        },
+        {
+          "id": "F17",
+          "golds": [
+            "COI:25"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "COI:25",
+            "COI:27",
+            "COI:26",
+            "",
+            "COI:24"
+          ]
+        },
+        {
+          "id": "F18",
+          "golds": [
+            "BNS:296"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:296",
+            "BNS:294",
+            "BNS:294",
+            "BNS:295",
+            "BNS:34"
+          ]
+        },
+        {
+          "id": "F20",
+          "golds": [
+            "ITA:66A"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:66A",
+            "ITA:66A",
+            "ITA:66E",
+            "ITA:26",
+            "ITA:67C"
+          ]
+        },
+        {
+          "id": "F21",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:173"
+          ]
+        },
+        {
+          "id": "F22",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:70",
+            "ITA:70A",
+            "ITA:87",
+            "ITA:66F",
+            "ITA:69B"
+          ]
+        },
+        {
+          "id": "F23",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:70",
+            "ITA:66F",
+            "ITA:87",
+            "ITA:87",
+            "ITA:77"
+          ]
+        },
+        {
+          "id": "F28",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 4,
+          "top5": [
+            "ITA:69A",
+            "BNS:112",
+            "ITA:75",
+            "ITA:70",
+            "ITA:29"
+          ]
+        },
+        {
+          "id": "F29",
+          "golds": [
+            "BNS:319"
+          ],
+          "first_hit_rank": null,
+          "top5": [
+            "BNS:351",
+            "BNS:351",
+            "BNS:61",
+            "BNS:329",
+            "BNS:129"
+          ]
+        },
+        {
+          "id": "F30",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:309"
+          ]
+        },
+        {
+          "id": "F33",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:214"
+          ]
+        }
+      ]
+    },
+    {
+      "config": "hybrid_rerank",
+      "scored_items": 23,
+      "skipped_no_kb_gold": 10,
+      "mrr": {
+        "estimate": 0.9203,
+        "lo": 0.7971,
+        "hi": 1.0,
+        "n": 23
+      },
+      "recall@1": {
+        "estimate": 0.913,
+        "lo": 0.7826,
+        "hi": 1.0,
+        "n": 23
+      },
+      "recall@3": {
+        "estimate": 0.913,
+        "lo": 0.7826,
+        "hi": 1.0,
+        "n": 23
+      },
+      "recall@5": {
+        "estimate": 0.913,
+        "lo": 0.7826,
+        "hi": 1.0,
+        "n": 23
+      },
+      "recall@10": {
+        "estimate": 0.9565,
+        "lo": 0.8696,
+        "hi": 1.0,
+        "n": 23
+      },
+      "per_item": [
+        {
+          "id": "F01",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:119"
+          ]
+        },
+        {
+          "id": "F02",
+          "golds": [
+            "BNS:319"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:319",
+            "BNS:318",
+            "BNS:174",
+            "BNS:318",
+            "BNS:242"
+          ]
+        },
+        {
+          "id": "F03",
+          "golds": [
+            "BNS:351"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:351",
+            "BNS:351",
+            "BNS:87",
+            "BNS:133",
+            "BNS:131"
+          ]
+        },
+        {
+          "id": "F04",
+          "golds": [
+            "BNS:304"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:304",
+            "BNS:140",
+            "BNS:142",
+            "BNS:313",
+            "BNS:112"
+          ]
+        },
+        {
+          "id": "F05",
+          "golds": [
+            "COI:15"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "COI:15",
+            "COI:15",
+            "COI:15",
+            "COI:323B",
+            "COI:323B"
+          ]
+        },
+        {
+          "id": "F06",
+          "golds": [
+            "COI:25"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "COI:25",
+            "",
+            "COI:21",
+            "COI:19",
+            "COI:19"
+          ]
+        },
+        {
+          "id": "F07",
+          "golds": [
+            "COI:23"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "COI:23",
+            "COI:39",
+            "COI:395",
+            "COI:43A",
+            "COI:15"
+          ]
+        },
+        {
+          "id": "F08",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:70",
+            "ITA:72",
+            "ITA:66F",
+            "ITA:66E",
+            "ITA:66C"
+          ]
+        },
+        {
+          "id": "F12",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:265"
+          ]
+        },
+        {
+          "id": "F13",
+          "golds": [
+            "BNS:351"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:351",
+            "BNS:351",
+            "BNS:148",
+            "BNS:195",
+            "BNS:134"
+          ]
+        },
+        {
+          "id": "F14",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:70",
+            "ITA:66F",
+            "ITA:66B",
+            "ITA:87",
+            "ITA:72"
+          ]
+        },
+        {
+          "id": "F15",
+          "golds": [
+            "BNS:319"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:319",
+            "BNS:318",
+            "BNS:111",
+            "BNS:211",
+            "BNS:222"
+          ]
+        },
+        {
+          "id": "F16",
+          "golds": [
+            "BNS:115"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:115",
+            "BNS:122",
+            "BNS:118",
+            "BNS:125",
+            "BNS:117"
+          ]
+        },
+        {
+          "id": "F17",
+          "golds": [
+            "COI:25"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "COI:25",
+            "COI:28",
+            "COI:26",
+            "COI:27",
+            ""
+          ]
+        },
+        {
+          "id": "F18",
+          "golds": [
+            "BNS:296"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:296",
+            "BNS:294",
+            "BNS:30",
+            "BNS:27",
+            "BNS:29"
+          ]
+        },
+        {
+          "id": "F20",
+          "golds": [
+            "ITA:66A"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:66A",
+            "ITA:66A",
+            "ITA:66F",
+            "ITA:66E",
+            "ITA:26"
+          ]
+        },
+        {
+          "id": "F21",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:173"
+          ]
+        },
+        {
+          "id": "F22",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:70",
+            "ITA:70A",
+            "ITA:87",
+            "ITA:66F",
+            "ITA:69B"
+          ]
+        },
+        {
+          "id": "F23",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "ITA:70",
+            "ITA:66F",
+            "ITA:87",
+            "ITA:29",
+            "ITA:66C"
+          ]
+        },
+        {
+          "id": "F28",
+          "golds": [
+            "ITA:70"
+          ],
+          "first_hit_rank": 6,
+          "top5": [
+            "ITA:69A",
+            "BNS:152",
+            "ITA:75",
+            "BNS:48",
+            "BNS:112"
+          ]
+        },
+        {
+          "id": "F29",
+          "golds": [
+            "BNS:319"
+          ],
+          "first_hit_rank": null,
+          "top5": [
+            "BNS:351",
+            "BNS:217",
+            "BNS:351",
+            "BNS:197",
+            "BNS:61"
+          ]
+        },
+        {
+          "id": "F30",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:120",
+            "BNS:308"
+          ]
+        },
+        {
+          "id": "F33",
+          "golds": [
+            "BNS:308"
+          ],
+          "first_hit_rank": 1,
+          "top5": [
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:308",
+            "BNS:214"
+          ]
+        }
+      ]
+    }
+  ]
+}

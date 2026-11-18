@@ -14,8 +14,8 @@ data/trustguard.db
 data/kb/
 data/legal_pdfs/
 data/seed_pdfs/
-config/calibrated.yaml
-reports/eval/
+# config/calibrated.yaml is committed: it holds the dev-calibrated thresholds the README results use
+# reports/eval/ is committed: the README cites these metric files
 reports/samples/*.json
 
 # OS / editor
