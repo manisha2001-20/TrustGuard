@@ -209,3 +209,13 @@ The container runs the API only; Ollama/models run on the host (set `TRUSTGUARD_
 Legal texts are downloaded from official Government of India sources (see `scripts/init_kb.py` for URLs) and
 are seeded as `unreviewed` until a curator authenticates them on the Knowledge Base page. The original IT
 Act 2000 is seeded as `outdated` (superseded by the 2008 amendment) and excluded from evidence by default.
+
+## Screenshots
+
+Legal Query Workspace (corpus, model and verification settings):
+
+![Legal Query Workspace](docs/screenshots/workspace.png)
+
+Evaluation Dashboard, reading the committed `reports/eval/` metric files:
+
+![Evaluation Dashboard](docs/screenshots/evaluation.png)
